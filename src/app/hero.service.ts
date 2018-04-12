@@ -9,8 +9,7 @@ import {MessageService} from './message.service';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'user-key': '96ced68a4f764a6f8a19e953dae9bd55' },
                           
-                                      
-)
+                                    )
 
 };
 @Injectable()
@@ -18,8 +17,7 @@ export class HeroService {
 
 
   // Url to Web api
-  private Url = 'https://developers.zomato.com/api/v2.1/restaurant?res_id=16774318';
-
+  private Url = 'https://developers.zomato.com/api/v2.1/reviews?res_id=16774318';
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.Url,httpOptions)
     

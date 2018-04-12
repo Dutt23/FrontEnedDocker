@@ -2,7 +2,7 @@
 
 <!-- This is for fetching an displaying an entire list -->
 
-<!-- <h2>My Heroes</h2>
+ <!-- <h2>My Heroes</h2>
 
 <ul class = "heroes">
 
@@ -18,15 +18,54 @@
  </li>
     
 </ul> -->
+
 <!-- <routerLink="/detail/{{hero}}">  --> 
+
 <!-- This is for displaying a fetched restaurant -->
 
-<h2>My restaurant</h2>
+<!-- <h2>My restaurant</h2>
 <ul class = "heroes">
     <a>
     <span class = "badge">
-        {{heroes.id}}
+        {{heroes.R.res_id}}
     </span>
+    {{heroes.name}}
 
 </a>    
+</ul> -->
+
+
+<!-- Reviews of restaurants -->
+
+<h2> Restaurant Reviews </h2>
+<ul class= "heroes">
+  <li *ngFor="let restaurant of heroes.user_reviews">
+    <a>
+      <span class = "badge"> {{restaurant.review.user.name}}
+
+       </span>
+          {{restaurant.review.rating}}
+          {{restaurant.review.id}}
+    </a>
+    
+  </li>
 </ul>
+
+<table>
+  <th>User Name</th>
+  <th>Rating</th>
+  <br><br><th>Rating Id</th>
+  <tr *ngFor="let restaurant of heroes.user_reviews">
+     <td>
+      {{restaurant.review.user.name}}
+     </td>
+    <br>
+     <td>
+    {{restaurant.review.rating}}
+     </td>
+    <br>
+     <td>
+    {{restaurant.review.id}}
+     </td>
+  </tr>
+</table>
