@@ -1,13 +1,32 @@
 
-<h2>My Heroes</h2>
+
+<!-- This is for fetching an displaying an entire list -->
+
+<!-- <h2>My Heroes</h2>
 
 <ul class = "heroes">
 
-<li *ngFor="let hero of heroes" >
-<a routerLink="/detail/{{hero.id}}">
-<span class = "badge"> {{hero.id}} </span> 
-{{hero.name}}
-</a>
-</li>
-</ul>
+   <li *ngFor="let hero of heroes.categories" > 
+     <a>
 
+       
+<span class = "badge"> {{hero.categories.id}} 
+         
+</span> 
+{{hero.categories.name}}  
+</a>
+ </li>
+    
+</ul> -->
+<!-- <routerLink="/detail/{{hero}}">  --> 
+<!-- This is for displaying a fetched restaurant -->
+
+<h2>My restaurant</h2>
+<ul class = "heroes">
+    <a>
+    <span class = "badge">
+        {{heroes.id}}
+    </span>
+
+</a>    
+</ul>
