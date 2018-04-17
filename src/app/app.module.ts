@@ -27,7 +27,9 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatChipsModule } from "@angular/material/chips";
 import "hammerjs";
 import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 
 @NgModule({
   declarations: [
