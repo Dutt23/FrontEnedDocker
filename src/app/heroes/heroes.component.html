@@ -35,7 +35,7 @@
 
 <!-- Reviews of restaurants -->
 
-<mat-grid-list cols="4" rowHeight="300px" layout-xs>
+<mat-grid-list cols="4" rowHeight="300px" >
   <mat-grid-tile class="grid" *ngFor="let hero of heroes" [colspan]="2" [rowspan]="2">
     <mat-card class="example-card">
       <a routerLink="/detail/{{hero.id}}">
@@ -52,15 +52,23 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color = "primary">LIKE</button>
+        <button mat-raised-button color = "primary" style="align-content: center">LIKE</button>
         <button mat-raised-button color = "accent">SHARE</button>
         <button mat-raised-button color="warn" class="delete" (click)="delete(hero)">delete</button>
       </mat-card-actions>
     </mat-card>
   </mat-grid-tile>
+  
  </mat-grid-list>
 
 
+ 
+
+ 
+
+ 
+  
+  
 
 <!-- Latest version -->
 <!-- <h2> Restaurant</h2>
@@ -122,7 +130,7 @@
      <td>
     {{restaurant.review.rating}}
      </td>
-    <br>
+    <br> 
      <td>
     {{restaurant.review.id}}
      </td>

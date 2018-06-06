@@ -13,23 +13,22 @@ import { MatSnackBar } from "@angular/material";
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
-  message: any ;
+  message: any;
   message1: any;
-  constructor(private heroService: HeroService,public snackBar: MatSnackBar) {}
+  constructor(private heroService: HeroService, public snackBar: MatSnackBar) {}
 
   getHeroes() {
-    
-    this.heroService
-      .getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().subscribe(heroes => (this.heroes = heroes));
   }
-  add(name: string , id: number , image: string , location: string){
-    
+  add(name: string, id: number, image: string, location: string) {
     name = name.trim();
-  
-    this.heroService.addHero({ id,name,image,location } as Hero).subscribe(hero => {
-      this.heroes.push(hero)
-    this.ngOnInit()});
+
+    this.heroService
+      .addHero({ id, name} as Hero)
+      .subscribe(hero => {
+        this.heroes.push(hero);
+        this.ngOnInit();
+      });
   }
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
@@ -49,22 +48,19 @@ export class HeroesComponent implements OnInit {
   prevStep() {
     this.step--;
   }
-  
-  openSnackBar(id1:number) {
-    
-    if(id1 == 0)
-    {
+
+  //Used for displaying the pop-up
+  openSnackBar(id1: number) {
+    if (id1 == 0) {
       this.message = "Error in the id";
-      this.snackBar.open(this.message, 'dismiss', {
-        duration: 2000,
+      this.snackBar.open(this.message, "dismiss", {
+        duration: 2000
       });
-  }
-  else
-  {
-    this.message1 = "Restaurant added";
-      this.snackBar.open(this.message1, 'dismiss', {
-        duration: 2000,
-      });  
+    } else {
+      this.message1 = "Restaurant added";
+      this.snackBar.open(this.message1, "dismiss", {
+        duration: 2000
+      });
     }
   }
   //  Calls the method on initializing

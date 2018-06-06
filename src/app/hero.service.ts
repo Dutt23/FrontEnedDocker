@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 
 //import {HEROES} from './mock-heroes';
-
 import { Observable } from "rxjs/Observable";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import "rxjs/add/operator/map";
@@ -14,6 +13,7 @@ import { of } from "rxjs/observable/of";
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
+    //Way to send user generated key.
     "user-key": "96ced68a4f764a6f8a19e953dae9bd55"
   })
 };
@@ -53,13 +53,11 @@ export class HeroService {
   }
   
   searchHeroes(term: string): Observable<Hero[]> {
-    if (!term.trim()) {
-      // if not search term, return empty hero array.
-      return of([]);
-    }
-    return this.http.get<Hero[]>(`http://localhost:8080/api/v1/getall=${term}`);
+    // if (!term.trim()) {
+    //   // if not search term, return empty hero array.
+    //   return of([]);
+    // }
+    return this.http.get<Hero[]>(`http://localhost:8080/api/v1/getallname/?name=${term}`);
   }
-  
-
   constructor(private http: HttpClient) {}
 }
